@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -63,7 +62,7 @@ public class TV {
             System.out.println(tv2.getName() + " is better");
 
 
-        ArrayList<Integer> list = new ArrayList<Integer>();
+        ArrayList<Integer> list = new ArrayList<>();
         list.add(3);
         list.add(1);
         list.add(2);
@@ -75,6 +74,9 @@ public class TV {
         Comparator<Integer> comparator = Comparator.reverseOrder();
         Collections.sort(list, comparator);
         System.out.println(list);
+        System.out.println(list);
+
+
 
 
 
