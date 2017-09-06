@@ -21,9 +21,8 @@ public class RichieRich {
 
         if (k >= n){
             StringBuilder res = new StringBuilder();
-            for (int max = 0; max < n; max++){
+            for (int max = 0; max < n; max++)
                 res.append("9");
-            }
             return res.toString();
         }
 
