@@ -12,22 +12,22 @@ public class RichieRich {
         if (s == null) return "-1";
         if (s.length() == 1) return (k > 0) ? "9" : s;
 
-        String[] sArr = s.split("");
-
-        if (isPalindrom(sArr)){
-            if (k == 0)
+        if (k == 0){
+            if (isPalindrom(s))
                 return s;
-
-            if (k >= n){
-                StringBuilder sb = new StringBuilder();
-                for(int max = 0; max < n; max++){
-                    sb.append("9");
-                }
-                return sb.toString();
-            }
-
+            else
+                return "-1";
         }
 
+        if (k >= n){
+            StringBuilder res = new StringBuilder();
+            for (int max = 0; max < n; max++){
+                res.append("9");
+            }
+            return res.toString();
+        }
+
+        String[] sArr = s.split("");
         int tail = s.length() - 1;
         for (int i = 0; i < n && k > 0; i++, tail--) {
             if (!sArr[i].equals(sArr[tail])) {
@@ -62,21 +62,6 @@ public class RichieRich {
             }
         }
 
-
-
-
-        while (k > 0) {
-            int min = 9;
-            for (int j = 0; j < n; j++) {
-                int jMin = Integer.parseInt(sArr[j]);
-                if (jMin < min)
-                    min = jMin;
-            }
-            for (int m = 0; m < n; m++) {
-
-            }
-        }
-
         if (k == 1 && (n % 2) == 1)
             sArr[n/2] = "9";
 
@@ -85,6 +70,10 @@ public class RichieRich {
             return Arrays.toString(sArr).replaceAll("\\[|\\]|,|\\s", "");
         else
             return "-1";
+    }
+
+    private static boolean isPalindrom(String str) {
+        return isPalindrom(str.split(""));
     }
 
     private static boolean isPalindrom(String[] arr) {
