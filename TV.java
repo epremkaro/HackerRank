@@ -5,6 +5,7 @@ import java.util.Comparator;
 class HDTV implements Comparable<HDTV> {
 
     private int size;
+    private int size1;
     private String name;
 
     public HDTV(){
@@ -14,6 +15,7 @@ class HDTV implements Comparable<HDTV> {
     public HDTV(int size, String name){
         this.size = size;
         this.name = name;
+		
     }
 
     public int getSize() {
